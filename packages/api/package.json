@@ -1,0 +1,30 @@
+{
+  "name": "btsdex-api",
+  "version": "0.7.2",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rm -rf lib build",
+    "build": "babel src -d lib",
+    "postbuild": "yarn browserify && yarn minify",
+    "browserify": "browserify lib/index.js --standalone btsdex-api -o build/btsdex-api.js -d",
+    "minify": "minify build/btsdex-api.js -o  build/btsdex-api.min.js",
+    "dev": "nodemon --exec yarn build --watch src",
+    "test": "mocha --require @babel/register"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-proposal-export-default-from": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-minify": "^0.5.1",
+    "browserify": "^16.5.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "isomorphic-ws": "^4.0.1",
+    "ws": "^6.2.1"
+  }
+}

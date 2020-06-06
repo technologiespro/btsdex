@@ -1,1 +1,6 @@
-/lib/
+build
+docs
+packages
+src
+test
+.env

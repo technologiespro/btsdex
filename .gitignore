@@ -1,5 +1,7 @@
-.idea
-/node_modules/
+build
+lib
+node_modules
+.env
 package-lock.json
-/dist/
-/tests/test-config.json
+*.lock
+yarn-error.log
